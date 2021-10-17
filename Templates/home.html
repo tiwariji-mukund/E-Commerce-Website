@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!-- Page Content -->
+<!-- Banner Starts Here -->
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="caption">
+          <h2>Ecommerce WebSite</h2>
+          <div class="line-dec"></div>
+          <p>Pixie Ecommerce WebSite can provide best deals on various products like Fashion, Electronics, Grocery, etc. All <strong>Products</strong> are mentioned in their respective categories with best deals available.
+          <br><br>Please tell your friends about <a rel="nofollow" href="https://www.facebook.com/tooplate/">Pixie</a> Ecommerce WebSite. Thank you.</p>
+          <div class="main-button">
+            <a href="#">Order Now!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Banner Ends Here -->
+
+<!-- Featured Starts Here -->
+<div class="featured-items">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>Featured Items</h1>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="owl-carousel owl-theme">
+          <a href="single-product.html">
+            <div class="featured-item">
+              <a href="https://www.amazon.in/dp/B07RVG5TLB?pf_rd_m=A1K21FY43GMZF8&pf_rd_s=merchandised-search-4&pf_rd_r=H0DJE2S08WM79DV0B23F&pf_rd_t=101&pf_rd_p=10c31ec0-9f47-4cda-9e84-dcc023316846&pf_rd_i=27054029031&linkCode=li2&tag=mukund1876-21&linkId=8db3b0c5cc7a3c35a69d090813ad73d2&language=en_IN&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07RVG5TLB&Format=_SL160_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=mukund1876-21&language=en_IN" ></a>
+              <img src="https://ir-in.amazon-adsystem.com/e/ir?t=mukund1876-21&language=en_IN&l=li2&o=31&a=B07RVG5TLB">
+              <h4>Light Colour Denim Jeans</h4>
+              <h6>Rs. 1499.00</h6>
+            </div>
+          </a>
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'images/item-02.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dark Colour Denim Jeans</h5>
+              <p class="card-text">Rs. 1499.00</p>
+              <a href="single-product.html" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+          <a href="single-product.html">
+            <div class="featured-item">
+              <img src="{% static 'images/item-03.jpg' %}" alt="Item 3">
+              <h4>Jacket</h4>
+              <h6>Rs. 3500.00</h6>
+            </div>
+          </a>
+          <a href="single-product.html">
+            <div class="featured-item">
+              <img src="{% static 'images/item-04.jpg' %}" alt="Item 4">
+              <h4>Sky Blue Ladies Purse</h4>
+              <h6>Rs. 450.00</h6>
+            </div>
+          </a>
+          <a href="single-product.html">
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Featred Ends Here -->
+
+<!-- Subscribe Form Starts Here -->
+<div class="subscribe-form">
+  {% if messages %}
+  {% for message in messages %}
+  <center>
+  <h1><b><u>Congratulation!!!</u></b></h1>
+  <p><h3>You are successfully subscribed.</h3></p>
+  <br/>
+  <p><h5>We will notify you about the upcoming deals and offers.</h5></p> 
+  </center>
+  {% endfor %}
+  
+  {% else %}
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+              <div class="line-dec"></div>
+              <h1>Subscribe on PIXIE now!</h1>
+          </div>
+        </div>
+        <div class="col-md-8 offset-md-2">
+          <div class="main-content">
+            <p>Stay updated with the latest products, the best deals, and all quirky news from PIXIE..</p>
+            <div class="container">
+              <form id="subscribe" action="/" method="POST">
+               {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-7">
+                    <fieldset>
+                    <input name="email" type="text" class="form-control" id="email" 
+                    onfocus="if(this.value == 'Your Email...') { this.value = ''; }" 
+                    onBlur="if(this.value == '') { this.value = 'Your Email...';}"
+                    value="Your Email..." required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-md-5">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+<!-- Subscribe Form Ends Here -->
+
+{% endblock %}
+
